@@ -6,3 +6,4 @@ if (!fs.existsSync("./minhapasta")) {
 } else if (fs.existsSync("./minhapasta")) {
   console.log("Existe!");
 }
+
