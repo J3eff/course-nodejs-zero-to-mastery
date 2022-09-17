@@ -13,6 +13,6 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "4.1.0"
   }
 }
