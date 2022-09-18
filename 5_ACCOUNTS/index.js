@@ -18,11 +18,19 @@ function operation() {
             const action = anwser['action']
 
             switch (action) {
-                case 'Criar Conta':
+                case "Criar Conta":
                     createAccount()
                     break
-                default:
+                case "Consultar Salado":
                     break
+                case "Depositar":
+                    break
+                case "Sacar":
+                    break
+                default:
+                    console.log(chalk.bgBlue.black("Obrigado por usar o Accounts!"))
+                    process.exit()
+                    break;
             }
 
         }).catch((err) => console.log(err))
