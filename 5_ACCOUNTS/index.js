@@ -108,7 +108,6 @@ function deposit() {
 
 }
 
-
 //#region  Methos Helpers
 function checkAccount(accountName) {
     if (!fs.existsSync(`accounts/${accountName}.json`)) {
