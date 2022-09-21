@@ -28,6 +28,7 @@ function operation() {
                     deposit()
                     break
                 case "Sacar":
+                    withdraw()
                     break
                 default:
                     console.log(chalk.bgBlue.black("Obrigado por usar o Accounts!"))
@@ -108,9 +109,7 @@ function deposit() {
 }
 
 
-
-
-// Methos Helpers
+//#region  Methos Helpers
 function checkAccount(accountName) {
     if (!fs.existsSync(`accounts/${accountName}.json`)) {
         console.log(chalk.bgRed.black('Esta conta não existe, escolha outro nome!'))
@@ -145,6 +144,8 @@ function getAccount(accountName) {
 
     return JSON.parse(accountJSON)
 }
+//#endregion
+
 
 // show account balance
 function getAccountBalance() {
@@ -164,5 +165,33 @@ function getAccountBalance() {
 
         console.log(chalk.bgBlue.black(`Olá, o saldo da sua conta é de R$${accountData.balance}`))
         operation()
+    }).catch(err => console.log(err))
+}
+
+// withdraw an amount from user account
+function withdraw() {
+    inquirer.prompt([
+        {
+            name: 'accountName',
+            message: 'Qual o nome da sua conta?'
+        }
+    ]).then(answer => {
+        const accountName = answer["accountName"]
+
+        if (!checkAccount(accountName))
+            return withdraw()
+
+        inquirer.prompt([
+            {
+                name: 'amount',
+                message: 'Quanto você deseja sacar?'
+            }
+        ]).then(answer => {
+            const amount = answer['amount']
+
+            
+
+        }).catch(err => console.log(err))
+
     }).catch(err => console.log(err))
 }
