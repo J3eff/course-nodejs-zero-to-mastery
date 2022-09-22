@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carros</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body class="index">
+        <h1 class="title">Adicionar Carro</h1>
+        <div>
+            <h3 class="subtitle">Informações sobre o carro</h3>
+        </div>
+        <form action="/cars/save" method="POST">
+            <div>
+                <input type="text" name="brand" placeholder="Digite a marca do carro"> 
+            </div>
+            <div>
+                <input type="text" name="model" placeholder="Digite o modelo do carro"> 
+            </div> 
+            <div>
+                <input type="number" name="year" placeholder="Digite o ano do carro">
+            </div>
+            <div>
+                <input type="submit" value="Cadastrar"> 
+            </div>
+        </form>
+
+        <a href="/">Voltar</a>
+    </body>
+</html>

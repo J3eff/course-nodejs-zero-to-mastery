@@ -1,0 +1,20 @@
+.index {
+    background-color: #DFDFDF;
+    text-align: center;
+    padding: 2em;
+    color: rgb(114, 116, 235);
+}
+
+.title {
+    color: black;
+}
+
+.subtitle {
+    color: rgb(61, 46, 46);
+}
+
+.sobre {
+    background-color: #554e4e;
+    text-align: center;
+    padding: 2em;
+}
