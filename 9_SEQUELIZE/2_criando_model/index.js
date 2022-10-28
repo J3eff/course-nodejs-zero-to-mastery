@@ -5,18 +5,34 @@ const conn = require('./db/conn')
 const User = require('./models/User')
 
 const app = express()
-
 app.use(express.json())
-
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
-
 app.use(
     express.urlencoded({
         extended: true
     })
 )
+
+app.get('/users/create', (req, res) => {
+    res.render('adduser')
+})
+
+app.post('/users/create', async (req, res) => {
+    const name = req.body.name
+    const occupation = req.body.occupation
+    let newslatter = req.body.newslatter
+
+    if (newslatter === 'on')
+        newslatter = true
+    else
+        newslatter = false
+
+    await User.create({ name, occupation, newslatter })
+
+    res.redirect('/')
+})
 
 app.get('/', (req, res) => {
     res.render('home')
