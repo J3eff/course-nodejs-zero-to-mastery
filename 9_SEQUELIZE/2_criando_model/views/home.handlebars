@@ -5,7 +5,10 @@
             <h1>{{this.name}}</h1>
             <p>{{this.occupation}}</p>
             <div class="actions">
-                <a href="/users/{{this.id}}">Ver detalhes</a>
+                <a href="/users/{{this.id}}" class="details-btn">Ver detalhes</a>
+                <form action="/users/delete/{{this.id}}" method="POST">
+                    <input type="submit" value="Excluir" class="delete-btn">
+                </form>   
             </div>
         </div>
     {{/each}}
