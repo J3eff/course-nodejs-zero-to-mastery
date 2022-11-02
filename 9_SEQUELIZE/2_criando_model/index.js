@@ -50,6 +50,14 @@ app.post('/users/delete/:id', async (req, res) => {
     res.redirect('/')
 })
 
+app.get('/users/edit/:id', async (req, res) => {
+    const id = req.params.id
+
+    const user = await User.findOne({ raw: true, where: { id: id } })
+
+    res.render('useredit', { user })
+})
+
 app.get('/', async (req, res) => {
     const users = await User.findAll({ raw: true })
 
