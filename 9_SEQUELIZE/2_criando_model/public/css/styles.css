@@ -68,5 +68,16 @@ h1 {
     padding: 20px;
     flex: 1 1 29%;
     max-width: 29%;
-    height: 75px;
+    display: flex;
+    flex-direction:  column;
+    justify-content: space-around;
+}
+
+.item h2,
+.item p {
+    margin-bottom: .8em;
+}
+
+.actions {
+    display: flex;
 }
