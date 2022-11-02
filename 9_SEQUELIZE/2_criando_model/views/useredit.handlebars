@@ -1,5 +1,5 @@
 <h1>Editando: {{user.name}}</h1>
-<form action="/users/edit/{{this.id}}" method="POST" class="form">
+<form action="/users/update" method="POST" class="form">
     <input type="hidden" name="id" value="{{user.id}}">
     <div class="form-control">
         <label for="name">Nome:</label>

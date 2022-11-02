@@ -58,6 +58,29 @@ app.get('/users/edit/:id', async (req, res) => {
     res.render('useredit', { user })
 })
 
+app.post('/users/update', async (req, res) => {
+    const id = req.body.id
+    const name = req.body.name
+    const occupation = req.body.occupation
+    let newslatter = req.body.newslatter
+
+    if (newslatter === 'on')
+        newslatter = true
+    else
+        newslatter = false
+
+    const userData = {
+        id,
+        name,
+        occupation,
+        newslatter
+    }
+
+    await User.update(userData, { where: { id: id } })
+
+    res.redirect('/')
+})
+
 app.get('/', async (req, res) => {
     const users = await User.findAll({ raw: true })
 
@@ -65,7 +88,6 @@ app.get('/', async (req, res) => {
 
     res.render('home', { users: users })
 })
-
 
 conn.sync().then(() => {
     app.listen(3000)
