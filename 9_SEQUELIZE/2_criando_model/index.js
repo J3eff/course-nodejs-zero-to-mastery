@@ -90,6 +90,25 @@ app.get('/', async (req, res) => {
     res.render('home', { users: users })
 })
 
+app.post('/address/create', async (req, res) => {
+    const UserId = req.body.UserId
+    const street = req.body.street
+    const number = req.body.number
+    const city = req.body.city
+
+    const address = {
+        UserId,
+        street,
+        number, 
+        city
+    
+    }
+
+    await Address.create(address);
+
+    res.redirect(`/users/edit/${UserId}`)
+})
+
 conn
     .sync()
     //.sync({force: true})

@@ -105,3 +105,19 @@ h1 {
     border-color: #721c24;
     color: #721c24;
 }
+
+/* ADDRESS */
+.address-container {
+    max-width: 1000px;
+    margin: 1em auto;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+}
+
+.address-container h2 {
+    margin-bottom: 1em;
+}
+
+.address-container form {
+    width: 300px;
+}
