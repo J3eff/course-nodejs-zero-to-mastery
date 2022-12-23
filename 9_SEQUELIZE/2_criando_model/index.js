@@ -113,6 +113,17 @@ app.post('/address/create', async (req, res) => {
     res.redirect(`/users/edit/${UserId}`)
 })
 
+app.post('/address/delete', async (req, res) => { 
+    const id = req.body.id
+    const userId = req.body.userId
+
+    await Address.destroy({
+        where: { id : id}
+    })
+
+    res.redirect(`/users/edit/${userId}`)
+})
+
 conn
     .sync()
     //.sync({force: true})
