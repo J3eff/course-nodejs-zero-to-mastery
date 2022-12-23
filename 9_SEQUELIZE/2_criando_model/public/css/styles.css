@@ -112,6 +112,7 @@ h1 {
     margin: 1em auto;
     padding-top: 1em;
     border-top: 1px solid #ccc;
+    padding-bottom: 200px;
 }
 
 .address-container h2 {
@@ -120,4 +121,10 @@ h1 {
 
 .address-container form {
     width: 300px;
+}
+
+.address-list {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
 }
