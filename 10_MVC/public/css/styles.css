@@ -91,6 +91,11 @@ form input[type="submit"] {
     color: #333;
 }
 
+.title.done {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
 .actions {
     display: flex;
 }
@@ -114,3 +119,4 @@ form input[type="submit"] {
     border: none;
     cursor: pointer;
 }
+
