@@ -7,6 +7,10 @@ const flash = require('express-flash')
 const app = express()
 const conn = require('./db/conn')
 
+// Models
+const Tought = require('./models/Tought')
+const User = require('./models/User')
+
 // template engine
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
@@ -47,7 +51,7 @@ app.use(express.static('public'))
 
 // set session to res
 app.use((req, res, next) => {
-    if (req && req.session && req.session.userid)
+    if (req && req.session && req.session.userId)
         res.locals.session = req.session
 
     next()
