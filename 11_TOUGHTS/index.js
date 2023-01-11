@@ -15,6 +15,12 @@ const User = require('./models/User')
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
+// Import Routes
+const toughtsRoutes = require('./routers/toughtsRoutes')
+
+// Import Controller
+const ToughtController = require('./controllers/ToughtController')
+
 // receber reposta do body
 app.use(
     express.urlencoded({
@@ -56,6 +62,10 @@ app.use((req, res, next) => {
 
     next()
 })
+
+//Routes
+app.use('/toughts', toughtsRoutes)
+app.get('/', ToughtController.showToughts)
 
 conn
     .sync()
