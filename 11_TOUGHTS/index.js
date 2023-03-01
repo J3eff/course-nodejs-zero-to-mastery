@@ -44,7 +44,7 @@ app.use(
         cookie: {
             secure: false,
             maxAge: 360000,
-            // expires: new Date(Date.now() + 360000),
+            expires: new Date(Date.now() + 360000),
             httpOnly: true
         }
     })
@@ -58,7 +58,7 @@ app.use(express.static('public'))
 
 // set session to res
 app.use((req, res, next) => {
-    if (req && req.session && req.session.userId)
+    if (req && req.session && req.session.userid)
         res.locals.session = req.session
 
     next()
