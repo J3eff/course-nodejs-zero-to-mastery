@@ -44,7 +44,7 @@ app.use(
         cookie: {
             secure: false,
             maxAge: 360000,
-            expires: new Date(Date.now() + 360000),
+            // expires: new Date(Date.now() + 360000),
             httpOnly: true
         }
     })
@@ -65,11 +65,12 @@ app.use((req, res, next) => {
 })
 
 //Routes
-app.use('/', authRoutes)
 app.use('/toughts', toughtsRoutes)
+app.use('/', authRoutes)
 app.get('/', ToughtController.showToughts)
 
 conn
+    //.sync({ force: true})
     .sync()
     .then(() => app.listen(3000))
     .catch((err) => console.log(err))
