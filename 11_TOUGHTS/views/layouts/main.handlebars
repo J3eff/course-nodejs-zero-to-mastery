@@ -21,11 +21,11 @@
             <li><a href="/">Pensamentos</a></li>
             <!-- URLs após autenticação -->
             {{#if session.userid}}
-            <li><a href="/toughts/dashboard">Dashboard</a></li>
-            <li><a href="/logout">Sair</a></li>
+                <li><a href="/toughts/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Sair</a></li>
             {{else}}
-            <li><a href="/login">Entrar</a></li>
-            <li><a href="/register">Registrar</a></li>
+                <li><a href="/login">Entrar</a></li>
+                <li><a href="/register">Registrar</a></li>
             {{/if}}
         </ul>
     </nav>
