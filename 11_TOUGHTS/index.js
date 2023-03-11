@@ -58,8 +58,7 @@ app.use(express.static('public'))
 
 // set session to res
 app.use((req, res, next) => {
-    console.log(req.session);
-
+    
     if (req && req.session && req.session.userid)
         res.locals.session = req.session
 
