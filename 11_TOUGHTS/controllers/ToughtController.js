@@ -25,7 +25,7 @@ module.exports = class ToughtController {
 
         let emptyToughts = false;
 
-        if(toughts.length === 0)
+        if (toughts.length === 0)
             emptyToughts = true
 
         res.render('toughts/dashboard', { toughts, emptyToughts })
@@ -71,5 +71,13 @@ module.exports = class ToughtController {
         }
 
         res.redirect
+    }
+
+    static async updateTought(req, res) {
+        const id = req.params.id;
+
+        const tought = await Tought.findOne({ where: { id: id }, raw: true  })
+
+        res.render('toughts/edit', { tought })
     }
 }
