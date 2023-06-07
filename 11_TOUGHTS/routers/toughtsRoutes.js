@@ -13,5 +13,4 @@ router.get('/dashboard', checkAuth, ToughtController.dashboard)
 router.post('/remove', checkAuth, ToughtController.removeTought)
 router.get('/', ToughtController.showToughts)
 
-
 module.exports = router;
