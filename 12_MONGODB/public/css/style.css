@@ -7,7 +7,6 @@
 }
 
 /* NAVBAR*/
-
 #navbar {
     padding: 1.2em 1.4em;
     margin-bottom: 1em;
@@ -30,4 +29,45 @@
     text-decoration: none;
     transition: .5s;
     font-weight: bold;
+}
+
+.container {
+    padding: 2em;
+}
+
+.container h1 {
+    margin-bottom: 1em;
+}
+
+.container form {
+    max-width: 300px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: .3em;
+}
+
+.form-control input,
+.form-control textarea {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"],
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: .7em 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
