@@ -71,3 +71,23 @@ form input[type="submit"],
     border: none;
     cursor: pointer;
 }
+
+.products {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 23%;
+    margin: 1%;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    margin-bottom: .5em;
+}
+
+.product h3 {
+    margin-bottom: 1em;
+}
