@@ -91,3 +91,12 @@ form input[type="submit"],
 .product h3 {
     margin-bottom: 1em;
 }
+
+.product-page img {
+    max-width: 250px;
+    margin-bottom: 1em;
+}
+
+.product-page p {
+    margin-bottom: 1em;
+}
