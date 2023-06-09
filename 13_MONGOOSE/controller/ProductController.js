@@ -29,11 +29,11 @@ module.exports = class ProductController {
         res.render('products/product', { product })
     }
 
-    // static async removeProduct(req, res) {
-    //     const id = req.params.id;
-    //     await Product.removeProductById(id)
-    //     res.redirect('/products');
-    // }
+    static async removeProduct(req, res) {
+        const id = req.params.id;
+        await Product.deleteOne({ _id: id })
+        res.redirect('/products');
+    }
 
     static async editProduct(req, res) {
         const id = req.params.id;
@@ -48,10 +48,8 @@ module.exports = class ProductController {
         const price = req.body.price;
         const description = req.body.description;
 
-        const product = {name, price, description, image};        
-
-        await Product.updateOne({ _id: id}, product);
-
+        const product = { name, price, description, image };
+        await Product.updateOne({ _id: id }, product);
         res.redirect('/products');
     }
 }
